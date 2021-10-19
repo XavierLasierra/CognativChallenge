@@ -10,18 +10,24 @@ module.exports = {
   rules: {
     "no-multi-spaces": ["error"],
     "no-multiple-empty-lines": ["error", { max: 1 }],
-    "object-curly-spacing": [
-      "error",
-      "always",
-      { arraysInObjects: false, objectsInObjects: false },
-    ],
+    "object-curly-spacing": ["error", "always"],
     "no-use-before-define": ["off"],
     "no-console": ["error", { allow: ["warn", "error"] }],
-    "@typescript-eslint/interface-name-prefix": ["warn"],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        selector: "interface",
+        format: ["PascalCase"],
+        custom: {
+          regex: "^I[A-Z]",
+          match: true,
+        },
+      },
+    ],
     "@typescript-eslint/no-use-before-define": ["off"],
     "@typescript-eslint/no-var-requires": ["warn"],
     "@typescript-eslint/no-empty-function": ["warn"],
-    "@typescript-eslint/camelcase": ["warn"],
+    "@typescript-eslint/camelcase": ["off"],
     "@typescript-eslint/no-empty-interface": ["warn"],
     "react-native/no-inline-styles": ["error"],
     "react-native/no-raw-text": ["warn"],
