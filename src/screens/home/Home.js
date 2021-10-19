@@ -17,6 +17,7 @@ import Metrics from "../../theme/Metrics";
 import placeholder from "../../constants/placeholder.constants";
 import recommendations from "../../__mocks__/recommendations.mock";
 import recipes from "../../__mocks__/recipes.mock";
+import RecipePreview from "../../components/RecipePreview/RecipePreview";
 
 export default function Home(props) {
   const handlePress = data => {
@@ -53,31 +54,7 @@ export default function Home(props) {
 
   const renderRow = ({ item }) => {
     return (
-      <TouchableOpacity onPress={() => handlePress(item)}>
-        <View style={styles.rowContainer}>
-          <View style={styles.imageContainer}>
-            <Image
-              source={{ uri: item?.photo || placeholder.defaultImageUrl }}
-              style={styles.recipeImage}
-            />
-          </View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.categoryRow}>{item.categoryName}</Text>
-            <Text style={styles.titleRow}>{item.name}</Text>
-            <View style={styles.properties}>
-              <View style={styles.cellRow}>
-                <Text style={styles.cellText}>{item.duration} minutes</Text>
-              </View>
-              <View style={styles.cellRow}>
-                <Text style={styles.cellText}>{item.complexity}</Text>
-              </View>
-              <View style={styles.cellRow}>
-                <Text style={styles.cellText}>{item.people} people</Text>
-              </View>
-            </View>
-          </View>
-        </View>
-      </TouchableOpacity>
+      <RecipePreview recipe={item} actionOnPress={handlePress}></RecipePreview>
     );
   };
 
@@ -107,29 +84,6 @@ export default function Home(props) {
 }
 
 const styles = StyleSheet.create({
-  categoryRow: {
-    color: Colors.darkGrey,
-    fontSize: 10,
-    fontStyle: "normal",
-    fontWeight: "bold",
-    letterSpacing: 1,
-    lineHeight: 24,
-    textAlign: "left",
-  },
-  cellRow: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    marginRight: Metrics.smallSpace,
-  },
-  cellText: {
-    color: Colors.mediumGrey,
-    fontSize: 13,
-    fontStyle: "normal",
-    fontWeight: "300",
-    letterSpacing: 0.5,
-    lineHeight: 24,
-  },
   container: {
     alignItems: "stretch",
     backgroundColor: Colors.mainBackground,
@@ -143,15 +97,6 @@ const styles = StyleSheet.create({
     paddingVertical: Metrics.smallSpace,
     textAlign: "left",
   },
-  imageContainer: {
-    height: 128,
-  },
-  infoContainer: {
-    alignItems: "stretch",
-    justifyContent: "center",
-    paddingHorizontal: Metrics.baseSpace,
-    paddingVertical: Metrics.smallSpace,
-  },
   mainScreen: {
     backgroundColor: Colors.mainBackground,
     flex: 1,
@@ -163,14 +108,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: Metrics.statusBarHeight,
   },
-  properties: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-  },
-  recipeImage: {
-    flex: 1,
-  },
   recipeImageBox: {
     height: 128,
     width: 208,
@@ -179,15 +116,6 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     justifyContent: "center",
     marginBottom: Metrics.baseSpace,
-  },
-  rowContainer: {
-    alignItems: "stretch",
-    backgroundColor: Colors.whiteFull,
-    borderRadius: Metrics.borderRadius,
-    justifyContent: "flex-start",
-    marginBottom: Metrics.baseSpace,
-    marginHorizontal: Metrics.baseSpace,
-    overflow: "hidden",
   },
   scroller: {
     paddingRight: Metrics.baseSpace,
@@ -202,14 +130,5 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-  },
-  titleRow: {
-    color: Colors.black,
-    fontSize: 16,
-    fontStyle: "normal",
-    fontWeight: "500",
-    letterSpacing: 0.5,
-    lineHeight: 24,
-    textAlign: "left",
   },
 });
