@@ -12,11 +12,7 @@ import {
 import Colors from "../../theme/Colors";
 import Metrics from "../../theme/Metrics";
 
-import recipes from "../../__mocks__/recipes.mock";
-
-const [data] = recipes;
-
-export default function RecipeDetails() {
+export default function RecipeDetails({ route: { params: data } }) {
   let imageUrl = "http://via.placeholder.com/640x360";
   if (data && data.photo) {
     imageUrl = data.photo;

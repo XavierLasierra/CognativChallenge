@@ -33,13 +33,13 @@ export default function Home(props) {
     return <Image source={{ uri: imageUrl }} style={styles.scrollerRecipe} />;
   };
 
-  const onPress = () => {
-    props.navigation.push("Details");
+  const handlePress = data => {
+    props.navigation.push("Details", data);
   };
 
   const renderRow = ({ item }) => {
     return (
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity onPress={() => handlePress(item)}>
         <View style={styles.rowContainer}>
           <View style={styles.imageContainer}>{renderImage(item)}</View>
           <View style={styles.infoContainer}>
@@ -87,7 +87,9 @@ export default function Home(props) {
           contentContainerStyle={styles.scroller}>
           {recommendations.map(item => {
             return (
-              <TouchableOpacity onPress={onPress} key={item._id}>
+              <TouchableOpacity
+                onPress={() => handlePress(item)}
+                key={item._id}>
                 <View style={styles.recipeImageBox}>
                   {renderImageBox(item)}
                 </View>
