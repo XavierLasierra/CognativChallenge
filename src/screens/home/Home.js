@@ -14,34 +14,53 @@ import {
 import Colors from "../../theme/Colors";
 import Metrics from "../../theme/Metrics";
 
+import placeholder from "../../constants/placeholder.constants";
 import recommendations from "../../__mocks__/recommendations.mock";
 import recipes from "../../__mocks__/recipes.mock";
 
 export default function Home(props) {
-  const renderImage = item => {
-    let imageUrl = "http://via.placeholder.com/640x360";
-    if (item && item.photo) {
-      imageUrl = item.photo;
-    }
-    return <Image source={{ uri: imageUrl }} style={styles.recipeImage} />;
-  };
-  const renderImageBox = item => {
-    let imageUrl = "http://via.placeholder.com/640x360";
-    if (item && item.photo) {
-      imageUrl = item.photo;
-    }
-    return <Image source={{ uri: imageUrl }} style={styles.scrollerRecipe} />;
-  };
-
   const handlePress = data => {
     props.navigation.push("Details", data);
+  };
+
+  const renderRecommended = () => {
+    return (
+      <View style={styles.recommendedContainer}>
+        <Text style={styles.header}>Recommended</Text>
+        <ScrollView
+          horizontal={true}
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.scroller}>
+          {recommendations.map(item => {
+            return (
+              <TouchableOpacity
+                onPress={() => handlePress(item)}
+                key={item._id}>
+                <View style={styles.recipeImageBox}>
+                  <Image
+                    source={{ uri: item?.photo || placeholder.defaultImageUrl }}
+                    style={styles.scrollerRecipe}
+                  />
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </View>
+    );
   };
 
   const renderRow = ({ item }) => {
     return (
       <TouchableOpacity onPress={() => handlePress(item)}>
         <View style={styles.rowContainer}>
-          <View style={styles.imageContainer}>{renderImage(item)}</View>
+          <View style={styles.imageContainer}>
+            <Image
+              source={{ uri: item?.photo || placeholder.defaultImageUrl }}
+              style={styles.recipeImage}
+            />
+          </View>
           <View style={styles.infoContainer}>
             <Text style={styles.categoryRow}>{item.categoryName}</Text>
             <Text style={styles.titleRow}>{item.name}</Text>
@@ -62,42 +81,15 @@ export default function Home(props) {
     );
   };
 
-  const keyExtractor = item => item._id;
-
   const renderList = () => {
     return (
       <FlatList
         ListHeaderComponent={renderRecommended}
         showsVerticalScrollIndicator={false}
-        keyExtractor={keyExtractor}
+        keyExtractor={({ _id }) => _id}
         data={recipes}
         renderItem={renderRow}
       />
-    );
-  };
-
-  const renderRecommended = () => {
-    return (
-      <View style={styles.recommendedContainer}>
-        <Text style={styles.header}>Recommended</Text>
-        <ScrollView
-          horizontal={true}
-          showsVerticalScrollIndicator={false}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.scroller}>
-          {recommendations.map(item => {
-            return (
-              <TouchableOpacity
-                onPress={() => handlePress(item)}
-                key={item._id}>
-                <View style={styles.recipeImageBox}>
-                  {renderImageBox(item)}
-                </View>
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
-      </View>
     );
   };
 
