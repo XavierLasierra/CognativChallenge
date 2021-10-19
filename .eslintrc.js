@@ -16,7 +16,7 @@ module.exports = {
       { arraysInObjects: false, objectsInObjects: false },
     ],
     "no-use-before-define": ["off"],
-    "no-console": ["error", { allow: ["warn", "error"]}],
+    "no-console": ["error", { allow: ["warn", "error"] }],
     "@typescript-eslint/interface-name-prefix": ["warn"],
     "@typescript-eslint/no-use-before-define": ["off"],
     "@typescript-eslint/no-var-requires": ["warn"],
