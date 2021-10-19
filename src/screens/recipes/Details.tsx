@@ -8,6 +8,8 @@ import {
   SafeAreaView,
   StatusBar,
 } from "react-native";
+import { IRecipeDetailsProps } from "../../types/interfaces";
+
 import RecipeSummary from "../../components/RecipeSummary/RecipeSummary";
 
 import placeholder from "../../constants/placeholder.constants.js";
@@ -15,7 +17,9 @@ import placeholder from "../../constants/placeholder.constants.js";
 import Colors from "../../theme/Colors";
 import Metrics from "../../theme/Metrics";
 
-export default function RecipeDetails({ route: { params: data } }) {
+export default function RecipeDetails({
+  route: { params: recipe },
+}: IRecipeDetailsProps) {
   return (
     <SafeAreaView style={styles.mainScreen}>
       <StatusBar barStyle="dark-content" />
@@ -23,19 +27,19 @@ export default function RecipeDetails({ route: { params: data } }) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.imageContainer}>
             <Image
-              source={{ uri: data?.photo || placeholder.defaultImageUrl }}
+              source={{ uri: recipe?.photo || placeholder.defaultImageUrl }}
               style={styles.recipeImage}
             />
             <View style={styles.darkener} />
           </View>
-          <RecipeSummary recipe={data} alignCenter />
+          <RecipeSummary recipe={recipe} alignCenter />
           <View style={styles.infoBox}>
             <Text style={styles.header}>Ingredients</Text>
-            <Text style={styles.description}>{data.ingredients}</Text>
+            <Text style={styles.description}>{recipe.ingredients}</Text>
           </View>
           <View style={styles.infoBox}>
             <Text style={styles.header}>Info</Text>
-            <Text style={styles.description}>{data.description}</Text>
+            <Text style={styles.description}>{recipe.description}</Text>
           </View>
         </ScrollView>
       </View>
