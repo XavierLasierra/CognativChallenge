@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Text,
   StyleSheet,
@@ -17,18 +17,15 @@ import Metrics from "../../theme/Metrics";
 import recommendations from "../../__mocks__/recommendations.mock";
 import recipes from "../../__mocks__/recipes.mock";
 
-class ExploreScreen extends Component {
-  constructor(props) {
-    super(props);
-  }
-  renderImage = item => {
+export default function Home(props) {
+  const renderImage = item => {
     let imageUrl = "http://via.placeholder.com/640x360";
     if (item && item.photo) {
       imageUrl = item.photo;
     }
     return <Image source={{ uri: imageUrl }} style={styles.recipeImage} />;
   };
-  renderImageBox = item => {
+  const renderImageBox = item => {
     let imageUrl = "http://via.placeholder.com/640x360";
     if (item && item.photo) {
       imageUrl = item.photo;
@@ -36,15 +33,15 @@ class ExploreScreen extends Component {
     return <Image source={{ uri: imageUrl }} style={styles.scrollerRecipe} />;
   };
 
-  onPress = () => {
-    this.props.navigation.push("Details");
+  const onPress = () => {
+    props.navigation.push("Details");
   };
 
-  renderRow = ({ item }) => {
+  const renderRow = ({ item }) => {
     return (
-      <TouchableOpacity onPress={this.onPress}>
+      <TouchableOpacity onPress={onPress}>
         <View style={styles.rowContainer}>
-          <View style={styles.imageContainer}>{this.renderImage(item)}</View>
+          <View style={styles.imageContainer}>{renderImage(item)}</View>
           <View style={styles.infoContainer}>
             <Text style={styles.categoryRow}>{item.categoryName}</Text>
             <Text style={styles.titleRow}>{item.name}</Text>
@@ -65,21 +62,21 @@ class ExploreScreen extends Component {
     );
   };
 
-  keyExtractor = item => item._id;
+  const keyExtractor = item => item._id;
 
-  renderList = () => {
+  const renderList = () => {
     return (
       <FlatList
-        ListHeaderComponent={this.renderRecommended}
+        ListHeaderComponent={renderRecommended}
         showsVerticalScrollIndicator={false}
-        keyExtractor={this.keyExtractor}
+        keyExtractor={keyExtractor}
         data={recipes}
-        renderItem={this.renderRow}
+        renderItem={renderRow}
       />
     );
   };
 
-  renderRecommended = () => {
+  const renderRecommended = () => {
     return (
       <View style={styles.recommendedContainer}>
         <Text style={styles.header}>Recommended</Text>
@@ -90,9 +87,9 @@ class ExploreScreen extends Component {
           contentContainerStyle={styles.scroller}>
           {recommendations.map(item => {
             return (
-              <TouchableOpacity onPress={this.onPress}>
+              <TouchableOpacity onPress={onPress} key={item._id}>
                 <View style={styles.recipeImageBox}>
-                  {this.renderImageBox(item)}
+                  {renderImageBox(item)}
                 </View>
               </TouchableOpacity>
             );
@@ -101,21 +98,19 @@ class ExploreScreen extends Component {
       </View>
     );
   };
-  render() {
-    return (
-      <SafeAreaView style={styles.mainScreen}>
-        <StatusBar barStyle="dark-content" />
-        <View style={styles.navBar}>
-          <View style={styles.titleWrapper}>
-            <Text style={styles.title}>Recipes</Text>
-          </View>
+
+  return (
+    <SafeAreaView style={styles.mainScreen}>
+      <StatusBar barStyle="dark-content" />
+      <View style={styles.navBar}>
+        <View style={styles.titleWrapper}>
+          <Text style={styles.title}>Recipes</Text>
         </View>
-        <View style={styles.container}>{this.renderList()}</View>
-      </SafeAreaView>
-    );
-  }
+      </View>
+      <View style={styles.container}>{renderList()}</View>
+    </SafeAreaView>
+  );
 }
-export default ExploreScreen;
 
 const styles = StyleSheet.create({
   categoryRow: {
