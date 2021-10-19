@@ -16,3 +16,8 @@ export interface IRecipePreviewProps {
   recipe: IRecipe;
   actionOnPress: (recipe: IRecipe) => void;
 }
+
+export interface IRecipeSummaryProps {
+  recipe: IRecipe;
+  alignCenter?: boolean;
+}
