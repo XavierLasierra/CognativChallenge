@@ -14,16 +14,17 @@ import RecipeSummary from "../../components/RecipeSummary/RecipeSummary";
 import placeholder from "../../constants/placeholder.constants.js";
 
 import styles from "./details.styles";
+import { AppStyles } from "../../theme";
 
 export default function RecipeDetails({
   route: { params: recipe },
 }: IRecipeDetailsProps) {
   return (
-    <SafeAreaView style={styles.mainScreen}>
+    <SafeAreaView style={AppStyles.screen.mainScreen}>
       <StatusBar barStyle="dark-content" />
-      <View style={styles.container}>
+      <View style={AppStyles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.imageContainer}>
+          <View>
             <Image
               source={{ uri: recipe?.photo || placeholder.defaultImageUrl }}
               style={styles.recipeImage}

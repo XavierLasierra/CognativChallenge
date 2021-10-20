@@ -17,6 +17,7 @@ import recipes from "../../__mocks__/recipes.mock";
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
 
 import styles from "./home.styles";
+import AppStyles from "../../theme/AppStyles";
 
 export default function Home({ navigation }: IHomeProps) {
   const handlePress = (recipe: IRecipe): void => {
@@ -68,14 +69,14 @@ export default function Home({ navigation }: IHomeProps) {
   );
 
   return (
-    <SafeAreaView style={styles.mainScreen}>
+    <SafeAreaView style={AppStyles.screen.mainScreen}>
       <StatusBar barStyle="dark-content" />
       <View style={styles.navBar}>
         <View>
           <Text style={styles.title}>Recipes</Text>
         </View>
       </View>
-      <View style={styles.container}>{renderList}</View>
+      <View style={AppStyles.container}>{renderList}</View>
     </SafeAreaView>
   );
 }

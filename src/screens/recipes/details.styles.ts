@@ -4,12 +4,6 @@ import Colors from "../../theme/Colors";
 import Metrics from "../../theme/Metrics";
 
 export default StyleSheet.create({
-  container: {
-    alignItems: "stretch",
-    backgroundColor: Colors.mainBackground,
-    flex: 1,
-    justifyContent: "flex-start",
-  },
   darkener: {
     backgroundColor: Colors.black30,
     bottom: 0,
@@ -30,17 +24,12 @@ export default StyleSheet.create({
     lineHeight: 24,
     textAlign: "center",
   },
-  imageContainer: {},
   infoBox: {
     alignItems: "stretch",
     alignSelf: "stretch",
     justifyContent: "center",
     paddingHorizontal: Metrics.baseSpace,
     paddingVertical: Metrics.smallSpace,
-  },
-  mainScreen: {
-    backgroundColor: Colors.mainBackground,
-    flex: 1,
   },
   recipeImage: {
     height: 192,
