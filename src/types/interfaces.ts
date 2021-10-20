@@ -15,7 +15,7 @@ export interface IRecipe {
 
 export interface IRecipePreviewProps {
   recipe: IRecipe;
-  actionOnPress: (recipe: IRecipe) => void;
+  actionOnPress: (recipe: string) => void;
 }
 
 export interface IRecipeSummaryProps {
@@ -23,15 +23,18 @@ export interface IRecipeSummaryProps {
   alignCenter?: boolean;
 }
 
+interface IParams {
+  recipeId: string;
+}
 interface IRoute {
-  params: IRecipe;
+  params: IParams;
 }
 export interface IRecipeDetailsProps {
   route: IRoute;
 }
 
 interface INavigation {
-  push: (path: string, recipe: IRecipe) => void;
+  push: (path: string, params: IParams) => void;
 }
 
 export interface IHomeProps {
