@@ -15,14 +15,15 @@ import { IHomeProps, IRecipe, IRecipeProp } from "../../types/interfaces";
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
 
 import placeholder from "../../constants/placeholder.constants";
-import recommendations from "../../__mocks__/recommendations.mock";
 import Recipes from "../../recoil/recipes";
+import RecommendedRecipes from "../../recoil/recommendedRecipes";
 
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
 export default function Home({ navigation }: IHomeProps) {
   const recipes = useRecoilValue(Recipes);
+  const recommendations = useRecoilValue(RecommendedRecipes);
 
   const handlePress = (recipeId: string): void => {
     navigation.push("Details", { recipeId });

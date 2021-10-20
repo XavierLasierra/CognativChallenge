@@ -12,3 +12,15 @@ export async function getRecipes(): Promise<IRecipe[]> {
     return [];
   }
 }
+
+export async function getRecommendedRecipes(): Promise<IRecipe[]> {
+  try {
+    const { data }: any = await axios.get(
+      `${API_BASE_URL}/recipes?recommended=1`,
+    );
+    const { data: recommendedRecipes } = data;
+    return recommendedRecipes || [];
+  } catch (error) {
+    return [];
+  }
+}
