@@ -1,11 +1,12 @@
 import axios from "axios";
 import { API_BASE_URL } from "@env";
-
-import { IRecipe } from "../types/interfaces";
+import { IAxiosRecipeData, IRecipe } from "../types/interfaces";
 
 export async function getRecipes(): Promise<IRecipe[]> {
   try {
-    const { data }: any = await axios.get(`${API_BASE_URL}/recipes`);
+    const { data }: IAxiosRecipeData = await axios.get(
+      `${API_BASE_URL}/recipes`,
+    );
     const { data: recipes } = data;
     return recipes || [];
   } catch (error) {
@@ -15,7 +16,7 @@ export async function getRecipes(): Promise<IRecipe[]> {
 
 export async function getRecommendedRecipes(): Promise<IRecipe[]> {
   try {
-    const { data }: any = await axios.get(
+    const { data }: IAxiosRecipeData = await axios.get(
       `${API_BASE_URL}/recipes?recommended=1`,
     );
     const { data: recommendedRecipes } = data;
