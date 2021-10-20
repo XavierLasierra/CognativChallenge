@@ -17,3 +17,6 @@ coverage/
 
 # Environment variables file
 .env
+
+# SonarQube
+.scannerwork
