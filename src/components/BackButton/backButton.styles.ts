@@ -3,9 +3,11 @@ import { Colors } from "../../theme";
 
 export default StyleSheet.create({
   backButton: {
+    height: 50,
     left: 20,
     position: "absolute",
     top: 30,
+    width: 50,
     zIndex: 2,
   },
   line: {

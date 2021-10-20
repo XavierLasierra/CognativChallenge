@@ -7,6 +7,7 @@ export async function getRecipes(): Promise<IRecipe[]> {
     const { data }: IAxiosRecipeData = await axios.get(
       `${API_BASE_URL}/recipes`,
     );
+
     const { data: recipes } = data;
     return recipes || [];
   } catch (error) {
@@ -19,6 +20,7 @@ export async function getRecommendedRecipes(): Promise<IRecipe[]> {
     const { data }: IAxiosRecipeData = await axios.get(
       `${API_BASE_URL}/recipes?recommended=1`,
     );
+
     const { data: recommendedRecipes } = data;
     return recommendedRecipes || [];
   } catch (error) {
