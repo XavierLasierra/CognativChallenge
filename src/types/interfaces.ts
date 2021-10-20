@@ -31,10 +31,12 @@ interface IRoute {
 }
 export interface IRecipeDetailsProps {
   route: IRoute;
+  navigation: INavigation;
 }
 
 interface INavigation {
   push: (path: string, params: IParams) => void;
+  pop: () => void;
 }
 
 export interface IHomeProps {
@@ -43,4 +45,8 @@ export interface IHomeProps {
 
 export interface IRecipeProp {
   item: IRecipe;
+}
+
+export interface IBackButtonProps {
+  actionOnPress: () => void;
 }

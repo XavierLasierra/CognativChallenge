@@ -17,16 +17,23 @@ import placeholder from "../../constants/placeholder.constants";
 
 import styles from "./details.styles";
 import { AppStyles } from "../../theme";
+import BackButton from "../../components/BackButton/BackButton";
 
 export default function RecipeDetails({
+  navigation,
   route: {
     params: { recipeId },
   },
 }: IRecipeDetailsProps) {
   const recipe = useRecoilValue(recipeById(recipeId));
 
+  const handleNavigateBack = () => {
+    navigation.pop();
+  };
+
   return (
     <SafeAreaView style={AppStyles.screen.mainScreen}>
+      <BackButton actionOnPress={handleNavigateBack} />
       <StatusBar barStyle="dark-content" />
       <View style={AppStyles.container}>
         {recipe && (
