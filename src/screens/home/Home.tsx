@@ -13,13 +13,17 @@ import { IHomeProps, IRecipe, IRecipeProp } from "../../types/interfaces";
 
 import placeholder from "../../constants/placeholder.constants";
 import recommendations from "../../__mocks__/recommendations.mock";
-import recipes from "../../__mocks__/recipes.mock";
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
 
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
+import { useRecoilValue } from "recoil";
+import Recipes from "../../recoil/recipes";
+
 export default function Home({ navigation }: IHomeProps) {
+  const recipes = useRecoilValue(Recipes);
+
   const handlePress = (recipe: IRecipe): void => {
     navigation.push("Details", recipe);
   };
