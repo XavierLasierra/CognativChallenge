@@ -15,11 +15,11 @@ import RecipeSummary from "../../components/RecipeSummary/RecipeSummary";
 import { recipeById } from "../../recoil/recipes";
 import placeholder from "../../constants/placeholder.constants";
 
-import styles from "./details.styles";
+import styles from "./recipeDetail.styles";
 import { AppStyles } from "../../theme";
 import BackButton from "../../components/BackButton/BackButton";
 
-export default function RecipeDetails({
+export default function RecipeDetail({
   navigation,
   route: {
     params: { recipeId },
