@@ -14,3 +14,6 @@ web-build/
 
 # Test coverage report
 coverage/
+
+# Environment variables file
+.env

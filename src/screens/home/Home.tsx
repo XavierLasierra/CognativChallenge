@@ -9,19 +9,24 @@ import {
   ScrollView,
   StatusBar,
 } from "react-native";
+import { useRecoilValue } from "recoil";
 import { IHomeProps, IRecipe, IRecipeProp } from "../../types/interfaces";
 
-import placeholder from "../../constants/placeholder.constants";
-import recommendations from "../../__mocks__/recommendations.mock";
-import recipes from "../../__mocks__/recipes.mock";
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
+
+import placeholder from "../../constants/placeholder.constants";
+import Recipes from "../../recoil/recipes";
+import RecommendedRecipes from "../../recoil/recommendedRecipes";
 
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
 export default function Home({ navigation }: IHomeProps) {
-  const handlePress = (recipe: IRecipe): void => {
-    navigation.push("Details", recipe);
+  const recipes = useRecoilValue(Recipes);
+  const recommendations = useRecoilValue(RecommendedRecipes);
+
+  const handlePress = (recipeId: string): void => {
+    navigation.push("Details", { recipeId });
   };
 
   const renderRecommended = () => {
@@ -36,7 +41,7 @@ export default function Home({ navigation }: IHomeProps) {
           {recommendations.map((item: IRecipe) => {
             return (
               <TouchableOpacity
-                onPress={() => handlePress(item)}
+                onPress={() => handlePress(item._id)}
                 key={item._id}>
                 <View style={styles.recipeImageBox}>
                   <Image
