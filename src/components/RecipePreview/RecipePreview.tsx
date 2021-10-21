@@ -4,7 +4,7 @@ import { IRecipePreviewProps } from "../../types/interfaces";
 
 import RecipeSummary from "../RecipeSummary/RecipeSummary";
 
-import placeholderConstants from "../../constants/placeholder.constants";
+import placeholder from "../../constants/placeholder.constants";
 
 import styles from "./recipePreview.styles";
 
@@ -12,17 +12,19 @@ export default function RecipePreview({
   recipe,
   actionOnPress,
 }: IRecipePreviewProps) {
+  const { name, _id: id, photo } = recipe;
+
   return (
     <TouchableOpacity
       accessible={true}
-      accessibilityLabel={`Go to ${recipe.name} recipe`}
+      accessibilityLabel={`Go to ${name} recipe`}
       accessibilityRole="button"
-      onPress={() => actionOnPress(recipe._id)}>
+      onPress={() => actionOnPress(id)}>
       <View style={styles.rowContainer}>
         <View style={styles.imageContainer}>
           <Image
             source={{
-              uri: recipe?.photo || placeholderConstants.defaultImageUrl,
+              uri: photo || placeholder.defaultImageUrl,
             }}
             style={styles.recipeImage}
           />

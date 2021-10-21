@@ -5,26 +5,24 @@ import { IRecipeSummaryProps } from "../../types/interfaces";
 import styles from "./recipeSummary.styles";
 
 export default function RecipeSummary({
-  recipe,
+  recipe: { name, categoryName, duration, complexity, people },
   alignCenter,
 }: IRecipeSummaryProps) {
   return (
     <View style={styles.infoContainer}>
       <Text style={alignCenter ? styles.category : styles.categoryRow}>
-        {recipe.categoryName}
+        {categoryName}
       </Text>
-      <Text style={alignCenter ? styles.title : styles.titleRow}>
-        {recipe.name}
-      </Text>
+      <Text style={alignCenter ? styles.title : styles.titleRow}>{name}</Text>
       <View style={styles.properties}>
         <View style={alignCenter ? styles.cell : styles.cellRow}>
-          <Text style={styles.cellText}>{recipe.duration} minutes</Text>
+          <Text style={styles.cellText}>{duration} minutes</Text>
         </View>
         <View style={alignCenter ? styles.cell : styles.cellRow}>
-          <Text style={styles.cellText}>{recipe.complexity}</Text>
+          <Text style={styles.cellText}>{complexity}</Text>
         </View>
         <View style={alignCenter ? styles.cell : styles.cellRow}>
-          <Text style={styles.cellText}>{recipe.people} people</Text>
+          <Text style={styles.cellText}>{people} people</Text>
         </View>
       </View>
     </View>
