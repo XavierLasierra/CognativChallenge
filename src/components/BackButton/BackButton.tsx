@@ -7,6 +7,8 @@ import styles from "./backButton.styles";
 export default function BackButton({ actionOnPress }: IBackButtonProps) {
   return (
     <TouchableOpacity
+      accessible={true}
+      accessibilityLabel="Go back"
       accessibilityRole={"button"}
       style={styles.backButton}
       onPress={actionOnPress}>
