@@ -1,13 +1,14 @@
 import React from "react";
-import Home from "./Home";
+import { RecoilRoot } from "recoil";
 import { render } from "@testing-library/react-native";
+
+import Home from "./Home";
 
 import {
   getRecipes,
   getRecommendedRecipes,
 } from "../../services/recipes.services";
 import recipesMock from "../../__mocks__/recipes.mock";
-import { RecoilRoot } from "recoil";
 
 jest.mock("../../services/recipes.services");
 

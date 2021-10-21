@@ -1,8 +1,10 @@
 import React from "react";
-import RecipePreview from "./RecipePreview";
 import { render, fireEvent, RenderAPI } from "@testing-library/react-native";
-import recipesMock from "../../__mocks__/recipes.mock";
 import { IRecipe } from "../../types/interfaces";
+
+import RecipePreview from "./RecipePreview";
+
+import recipesMock from "../../__mocks__/recipes.mock";
 
 describe("Given a RecipePreview component", () => {
   describe("When it is rendered", () => {

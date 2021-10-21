@@ -1,6 +1,7 @@
 import { atom, selector } from "recoil";
-import { getRecipes } from "../../services/recipes.services";
 import { IRecipe } from "../../types/interfaces";
+
+import { getRecipes } from "../../services/recipes.services";
 
 export default atom<IRecipe[]>({
   key: "Recipes",

@@ -1,7 +1,8 @@
 import React from "react";
-import RecipeDetail from "./RecipeDetail";
 import { RecoilRoot } from "recoil";
 import { render } from "@testing-library/react-native";
+
+import RecipeDetail from "./RecipeDetail";
 
 import { getRecipes } from "../../services/recipes.services";
 import recipesMock from "../../__mocks__/recipes.mock";

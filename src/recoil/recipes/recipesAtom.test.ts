@@ -1,6 +1,8 @@
 import { snapshot_UNSTABLE } from "recoil";
-import recipesMock from "../../__mocks__/recipes.mock";
+
 import recipesState, { recipeById } from "./index";
+
+import recipesMock from "../../__mocks__/recipes.mock";
 
 jest.mock("../../services/recipes.services");
 
