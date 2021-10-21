@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a RecommendedRecipes component When it is rendered Then should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "justifyContent": "center",
+      "marginBottom": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#333333",
+        "fontWeight": "bold",
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+        "textAlign": "left",
+      }
+    }
+  >
+    Recommended
+  </Text>
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "paddingRight": 16,
+      }
+    }
+    horizontal={true}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+  >
+    <View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID="recommended-52944"
+      >
+        <View
+          style={
+            Object {
+              "height": 128,
+              "width": 208,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://www.themealdb.com/images/media/meals/1520084413.jpg",
+              }
+            }
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 4,
+                "height": 128,
+                "justifyContent": "center",
+                "marginLeft": 16,
+                "overflow": "hidden",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID="recommended-52943"
+      >
+        <View
+          style={
+            Object {
+              "height": 128,
+              "width": 208,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://www.themealdb.com/images/media/meals/1520083578.jpg",
+              }
+            }
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 4,
+                "height": 128,
+                "justifyContent": "center",
+                "marginLeft": 16,
+                "overflow": "hidden",
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

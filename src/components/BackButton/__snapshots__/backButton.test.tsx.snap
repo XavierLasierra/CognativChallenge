@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a BackButton component When it is rendered Then should match the snapshot 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 50,
+      "left": 20,
+      "opacity": 1,
+      "position": "absolute",
+      "top": 30,
+      "width": 50,
+      "zIndex": 2,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#e0e0e0",
+          "borderRadius": 50,
+          "height": 7,
+          "position": "absolute",
+          "width": 25,
+        },
+        Object {
+          "transform": Array [
+            Object {
+              "rotate": "-45deg",
+            },
+          ],
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#e0e0e0",
+          "borderRadius": 50,
+          "height": 7,
+          "position": "absolute",
+          "width": 25,
+        },
+        Object {
+          "top": 13,
+          "transform": Array [
+            Object {
+              "rotate": "45deg",
+            },
+          ],
+        },
+      ]
+    }
+  />
+</View>
+`;

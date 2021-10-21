@@ -15,7 +15,7 @@ export interface IRecipe {
 
 export interface IRecipePreviewProps {
   recipe: IRecipe;
-  actionOnPress: (recipe: string) => void;
+  actionOnPress: (recipeId: string) => void;
 }
 
 export interface IRecipeSummaryProps {
@@ -57,4 +57,9 @@ interface IRecipeData {
 
 export interface IAxiosRecipeData {
   data: IRecipeData;
+}
+
+export interface IRecommendedRecipesProps {
+  recommendations: IRecipe[];
+  actionOnPress: (recipeId: string) => void;
 }
