@@ -1,6 +1,6 @@
 import React from "react";
 import BackButton from "./BackButton";
-import { render, fireEvent, RenderAPI } from "@testing-library/react-native";
+import { render, fireEvent, RenderAPI } from "../../utils/test.utils";
 
 describe("Given a BackButton component", () => {
   describe("When it is rendered", () => {
