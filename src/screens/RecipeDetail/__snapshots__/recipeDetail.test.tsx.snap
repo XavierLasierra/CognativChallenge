@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a RecipeDetails component When it is rendered Then should match the snapshot 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#f7f7f7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "height": 50,
+        "left": 20,
+        "opacity": 1,
+        "position": "absolute",
+        "top": 30,
+        "width": 50,
+        "zIndex": 2,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#e0e0e0",
+            "borderRadius": 50,
+            "height": 7,
+            "position": "absolute",
+            "width": 25,
+          },
+          Object {
+            "transform": Array [
+              Object {
+                "rotate": "-45deg",
+              },
+            ],
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#e0e0e0",
+            "borderRadius": 50,
+            "height": 7,
+            "position": "absolute",
+            "width": 25,
+          },
+          Object {
+            "top": 13,
+            "transform": Array [
+              Object {
+                "rotate": "45deg",
+              },
+            ],
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "backgroundColor": "#f7f7f7",
+        "flex": 1,
+        "justifyContent": "flex-start",
+      }
+    }
+  >
+    <RCTScrollView
+      showsVerticalScrollIndicator={false}
+    >
+      <View>
+        <View>
+          <Image
+            source={
+              Object {
+                "uri": "https://www.themealdb.com/images/media/meals/1520084413.jpg",
+              }
+            }
+            style={
+              Object {
+                "height": 192,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.3)",
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "zIndex": 1,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "stretch",
+              "justifyContent": "center",
+              "paddingHorizontal": 16,
+              "paddingVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#9e9e9e",
+                "fontSize": 10,
+                "fontStyle": "normal",
+                "fontWeight": "bold",
+                "letterSpacing": 1,
+                "lineHeight": 24,
+                "textAlign": "center",
+              }
+            }
+          >
+            Fish
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#333333",
+                "fontSize": 16,
+                "fontStyle": "normal",
+                "fontWeight": "500",
+                "letterSpacing": 0.5,
+                "lineHeight": 24,
+                "textAlign": "center",
+              }
+            }
+          >
+            Escovitch Fish
+          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginRight": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#bdbdbd",
+                    "fontSize": 13,
+                    "fontStyle": "normal",
+                    "fontWeight": "300",
+                    "letterSpacing": 0.5,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                11
+                 minutes
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginRight": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#bdbdbd",
+                    "fontSize": 13,
+                    "fontStyle": "normal",
+                    "fontWeight": "300",
+                    "letterSpacing": 0.5,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                Hard
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginRight": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#bdbdbd",
+                    "fontSize": 13,
+                    "fontStyle": "normal",
+                    "fontWeight": "300",
+                    "letterSpacing": 0.5,
+                    "lineHeight": 24,
+                  }
+                }
+              >
+                3
+                 people
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "stretch",
+              "alignSelf": "stretch",
+              "justifyContent": "center",
+              "paddingHorizontal": 16,
+              "paddingVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#333333",
+                "fontSize": 14,
+                "lineHeight": 24,
+                "textAlign": "center",
+              }
+            }
+          >
+            Ingredients
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#9e9e9e",
+                "fontSize": 14,
+                "lineHeight": 24,
+              }
+            }
+          >
+            2 eggs
+4 tomatoes
+salt
+pepper
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "stretch",
+              "alignSelf": "stretch",
+              "justifyContent": "center",
+              "paddingHorizontal": 16,
+              "paddingVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#333333",
+                "fontSize": 14,
+                "lineHeight": 24,
+                "textAlign": "center",
+              }
+            }
+          >
+            Info
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#9e9e9e",
+                "fontSize": 14,
+                "lineHeight": 24,
+              }
+            }
+          >
+            Rinse fish; rub with lemon or lime, seasoned with salt and pepper or use your favorite seasoning. I used creole seasoning. Set aside or place in the oven to keep it warm until sauce is ready.
+
+In large skillet heat oil over medium heat, until hot, add the fish, cook each side- for about 5-7 minutes until cooked through and crispy on both sides. Remove fish and set aside. Drain oil and leave about 2-3 tablespoons of oil
+Add, bay leave, garlic and ginger, stir-fry for about a minute making sure the garlic does not burn
+Then add onion, bell peppers, thyme, scotch bonnet, sugar, all spice-continue stirring for about 2-3 minutes. Add vinegar, mix an adjust salt and pepper according to preference. Let it simmer for about 2 more minutes. 
+
+Discard bay leave, thyme spring and serve over fish with a side of this bammy. You may make the sauce about 2 days in advance.
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</RCTSafeAreaView>
+`;
