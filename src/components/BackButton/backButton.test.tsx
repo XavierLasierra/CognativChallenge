@@ -1,15 +1,16 @@
 import React from "react";
 import BackButton from "./BackButton";
-import { render, fireEvent } from "@testing-library/react-native";
+import { render, fireEvent, RenderAPI } from "@testing-library/react-native";
 
 describe("Given a BackButton component", () => {
   describe("When it is rendered", () => {
-    let actionOnPress: any;
-    let screen: any;
+    let actionOnPress: () => void;
+    let screen: RenderAPI;
     beforeEach(() => {
       actionOnPress = jest.fn();
       screen = render(<BackButton actionOnPress={actionOnPress} />);
     });
+
     test("Then should match the snapshot", () => {
       expect(screen).toMatchSnapshot();
     });
