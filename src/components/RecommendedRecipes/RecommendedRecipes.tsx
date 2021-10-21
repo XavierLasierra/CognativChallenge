@@ -17,20 +17,19 @@ export default function RecommendedRecipes({
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scroller}>
-        {recommendations.map((recommendedRecipe: IRecipe) => {
+        {recommendations.map(({ name, _id: id, photo }: IRecipe) => {
           return (
             <TouchableOpacity
               accessible={true}
-              accessibilityLabel={`Go to ${recommendedRecipe.name} recommended recipe`}
+              accessibilityLabel={`Go to ${name} recommended recipe`}
               accessibilityRole={"button"}
-              testID={`recommended-${recommendedRecipe._id}`}
-              onPress={() => actionOnPress(recommendedRecipe._id)}
-              key={recommendedRecipe._id}>
+              testID={`recommended-${id}`}
+              onPress={() => actionOnPress(id)}
+              key={id}>
               <View style={styles.recipeImageBox}>
                 <Image
                   source={{
-                    uri:
-                      recommendedRecipe?.photo || placeholder.defaultImageUrl,
+                    uri: photo || placeholder.defaultImageUrl,
                   }}
                   style={styles.scrollerRecipe}
                 />
