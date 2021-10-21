@@ -9,6 +9,7 @@ export default function AppNavigation() {
 
   return (
     <Stack.Navigator
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
       }}>
