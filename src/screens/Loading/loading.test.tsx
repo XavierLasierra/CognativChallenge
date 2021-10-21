@@ -1,6 +1,6 @@
 import React from "react";
 import Loading from "./Loading";
-import { render } from "../../utils/test.utils";
+import { render } from "@testing-library/react-native";
 
 describe("Given a Home component", () => {
   describe("When it is rendered", () => {

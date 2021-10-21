@@ -1,12 +1,13 @@
 import React from "react";
 import Home from "./Home";
-import { render } from "../../utils/test.utils";
+import { render } from "@testing-library/react-native";
 
 import {
   getRecipes,
   getRecommendedRecipes,
 } from "../../services/recipes.services";
 import recipesMock from "../../__mocks__/recipes.mock";
+import { RecoilRoot } from "recoil";
 
 jest.mock("../../services/recipes.services");
 
@@ -22,7 +23,11 @@ describe("Given a Home component", () => {
         push: jest.fn(),
       };
 
-      const screen = render(<Home navigation={navigation} />);
+      const screen = render(
+        <RecoilRoot>
+          <Home navigation={navigation} />
+        </RecoilRoot>,
+      );
 
       expect(screen).toMatchSnapshot();
     });

@@ -1,6 +1,7 @@
 import React from "react";
 import RecipeDetail from "./RecipeDetail";
-import { render } from "../../utils/test.utils";
+import { RecoilRoot } from "recoil";
+import { render } from "@testing-library/react-native";
 
 import { getRecipes } from "../../services/recipes.services";
 import recipesMock from "../../__mocks__/recipes.mock";
@@ -22,7 +23,9 @@ describe("Given a RecipeDetails component", () => {
       };
 
       const screen = render(
-        <RecipeDetail navigation={navigation} route={route} />,
+        <RecoilRoot>
+          <RecipeDetail navigation={navigation} route={route} />
+        </RecoilRoot>,
       );
 
       expect(screen).toMatchSnapshot();

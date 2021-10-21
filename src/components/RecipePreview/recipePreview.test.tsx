@@ -1,6 +1,6 @@
 import React from "react";
 import RecipePreview from "./RecipePreview";
-import { render, fireEvent, RenderAPI } from "../../utils/test.utils";
+import { render, fireEvent, RenderAPI } from "@testing-library/react-native";
 import recipesMock from "../../__mocks__/recipes.mock";
 import { IRecipe } from "../../types/interfaces";
 
