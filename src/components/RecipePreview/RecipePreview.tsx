@@ -13,7 +13,9 @@ export default function RecipePreview({
   actionOnPress,
 }: IRecipePreviewProps) {
   return (
-    <TouchableOpacity onPress={() => actionOnPress(recipe._id)}>
+    <TouchableOpacity
+      accessibilityRole="button"
+      onPress={() => actionOnPress(recipe._id)}>
       <View style={styles.rowContainer}>
         <View style={styles.imageContainer}>
           <Image

@@ -824,6 +824,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -1008,6 +1009,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -1192,6 +1194,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -1376,6 +1379,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -1560,6 +1564,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -1744,6 +1749,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -1928,6 +1934,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2112,6 +2119,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2296,6 +2304,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -2480,6 +2489,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityRole="button"
             accessible={true}
             focusable={true}
             onClick={[Function]}
