@@ -2,6 +2,7 @@
 
 exports[`Given a BackButton component When it is rendered Then should match the snapshot 1`] = `
 <View
+  accessibilityLabel="Go back"
   accessibilityRole="button"
   accessible={true}
   focusable={true}

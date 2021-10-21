@@ -14,6 +14,8 @@ export default function RecipePreview({
 }: IRecipePreviewProps) {
   return (
     <TouchableOpacity
+      accessible={true}
+      accessibilityLabel={`Go to ${recipe.name} recipe`}
       accessibilityRole="button"
       onPress={() => actionOnPress(recipe._id)}>
       <View style={styles.rowContainer}>

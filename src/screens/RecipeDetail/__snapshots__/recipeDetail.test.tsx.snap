@@ -11,6 +11,7 @@ exports[`Given a RecipeDetails component When it is rendered Then should match t
   }
 >
   <View
+    accessibilityLabel="Go back"
     accessibilityRole="button"
     accessible={true}
     focusable={true}
