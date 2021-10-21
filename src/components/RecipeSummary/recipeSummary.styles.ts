@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Fonts } from "../../theme";
 
 import Colors from "../../theme/Colors";
 import Metrics from "../../theme/Metrics";
@@ -15,7 +16,7 @@ export default StyleSheet.create({
   },
   categoryRow: {
     color: Colors.darkGrey,
-    fontSize: 10,
+    fontSize: Fonts.size.tiny,
     fontStyle: "normal",
     fontWeight: "bold",
     letterSpacing: 1,
@@ -37,7 +38,7 @@ export default StyleSheet.create({
   },
   cellText: {
     color: Colors.mediumGrey,
-    fontSize: 13,
+    fontSize: Fonts.size.small,
     fontStyle: "normal",
     fontWeight: "300",
     letterSpacing: 0.5,
@@ -56,7 +57,7 @@ export default StyleSheet.create({
   },
   title: {
     color: Colors.black,
-    fontSize: 16,
+    fontSize: Fonts.size.h2,
     fontStyle: "normal",
     fontWeight: "500",
     letterSpacing: 0.5,
@@ -65,7 +66,7 @@ export default StyleSheet.create({
   },
   titleRow: {
     color: Colors.black,
-    fontSize: 16,
+    fontSize: Fonts.size.h2,
     fontStyle: "normal",
     fontWeight: "500",
     letterSpacing: 0.5,

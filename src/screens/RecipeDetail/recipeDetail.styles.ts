@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Fonts } from "../../theme";
 
 import Colors from "../../theme/Colors";
 import Metrics from "../../theme/Metrics";
@@ -15,12 +16,12 @@ export default StyleSheet.create({
   },
   description: {
     color: Colors.darkGrey,
-    fontSize: 14,
+    fontSize: Fonts.size.medium,
     lineHeight: 24,
   },
   header: {
     color: Colors.black,
-    fontSize: 14,
+    fontSize: Fonts.size.medium,
     lineHeight: 24,
     textAlign: "center",
   },
