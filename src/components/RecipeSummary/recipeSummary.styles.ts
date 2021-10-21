@@ -1,8 +1,6 @@
 import { StyleSheet } from "react-native";
-import { Fonts } from "../../theme";
 
-import Colors from "../../theme/Colors";
-import Metrics from "../../theme/Metrics";
+import { Colors, Metrics, Fonts } from "../../theme";
 
 export default StyleSheet.create({
   category: {

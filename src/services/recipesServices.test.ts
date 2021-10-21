@@ -1,7 +1,7 @@
 import axios from "axios";
-import recipesMock from "../__mocks__/recipes.mock";
 
 import { getRecipes } from "./recipes.services";
+import recipesMock from "../__mocks__/recipes.mock";
 
 jest.mock("axios");
 
