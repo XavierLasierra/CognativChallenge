@@ -20,6 +20,8 @@ export default function RecommendedRecipes({
         {recommendations.map((item: IRecipe) => {
           return (
             <TouchableOpacity
+              accessibilityRole={"button"}
+              testID={`recommended-${item._id}`}
               onPress={() => actionOnPress(item._id)}
               key={item._id}>
               <View style={styles.recipeImageBox}>

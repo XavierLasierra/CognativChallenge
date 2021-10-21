@@ -366,6 +366,7 @@ pepper",
             >
               <View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -380,6 +381,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52944"
                 >
                   <View
                     style={
@@ -409,6 +411,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -423,6 +426,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52943"
                 >
                   <View
                     style={
@@ -452,6 +456,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -466,6 +471,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52942"
                 >
                   <View
                     style={
@@ -495,6 +501,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -509,6 +516,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52941"
                 >
                   <View
                     style={
@@ -538,6 +546,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -552,6 +561,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52940"
                 >
                   <View
                     style={
@@ -581,6 +591,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -595,6 +606,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52939"
                 >
                   <View
                     style={
@@ -624,6 +636,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -638,6 +651,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52938"
                 >
                   <View
                     style={
@@ -667,6 +681,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -681,6 +696,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52937"
                 >
                   <View
                     style={
@@ -710,6 +726,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -724,6 +741,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52936"
                 >
                   <View
                     style={
@@ -753,6 +771,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityRole="button"
                   accessible={true}
                   focusable={true}
                   onClick={[Function]}
@@ -767,6 +786,7 @@ pepper",
                       "opacity": 1,
                     }
                   }
+                  testID="recommended-52935"
                 >
                   <View
                     style={
