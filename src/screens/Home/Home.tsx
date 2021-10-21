@@ -1,29 +1,20 @@
 import React from "react";
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  SafeAreaView,
-  Image,
-  ScrollView,
-  StatusBar,
-} from "react-native";
+import { Text, View, FlatList, SafeAreaView, StatusBar } from "react-native";
 import { useRecoilValue } from "recoil";
-import { IHomeProps, IRecipe, IRecipeProp } from "../../types/interfaces";
+import { IHomeProps, IRecipeProp } from "../../types/interfaces";
 
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
+import RecommendedRecipes from "../../components/RecommendedRecipes/RecommendedRecipes";
 
-import placeholder from "../../constants/placeholder.constants";
-import Recipes from "../../recoil/recipes";
-import RecommendedRecipes from "../../recoil/recommendedRecipes";
+import RecipesState from "../../recoil/recipes";
+import RecommendedRecipesState from "../../recoil/recommendedRecipes";
 
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
 export default function Home({ navigation }: IHomeProps) {
-  const recipes = useRecoilValue(Recipes);
-  const recommendations = useRecoilValue(RecommendedRecipes);
+  const recipes = useRecoilValue(RecipesState);
+  const recommendations = useRecoilValue(RecommendedRecipesState);
 
   const handlePress = (recipeId: string): void => {
     navigation.push("RecipeDetail", { recipeId });
@@ -31,36 +22,15 @@ export default function Home({ navigation }: IHomeProps) {
 
   const renderRecommended = () => {
     return (
-      <View style={styles.recommendedContainer}>
-        <Text style={styles.header}>Recommended</Text>
-        <ScrollView
-          horizontal={true}
-          showsVerticalScrollIndicator={false}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.scroller}>
-          {recommendations.map((item: IRecipe) => {
-            return (
-              <TouchableOpacity
-                onPress={() => handlePress(item._id)}
-                key={item._id}>
-                <View style={styles.recipeImageBox}>
-                  <Image
-                    source={{ uri: item?.photo || placeholder.defaultImageUrl }}
-                    style={styles.scrollerRecipe}
-                  />
-                </View>
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
-      </View>
+      <RecommendedRecipes
+        recommendations={recommendations}
+        actionOnPress={handlePress}
+      />
     );
   };
 
   const renderRow = ({ item }: IRecipeProp) => {
-    return (
-      <RecipePreview recipe={item} actionOnPress={handlePress}></RecipePreview>
-    );
+    return <RecipePreview recipe={item} actionOnPress={handlePress} />;
   };
 
   const renderList = (
