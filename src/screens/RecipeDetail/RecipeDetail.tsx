@@ -11,13 +11,13 @@ import { useRecoilValue } from "recoil";
 import { IRecipeDetailsProps } from "../../types/interfaces";
 
 import RecipeSummary from "../../components/RecipeSummary/RecipeSummary";
+import BackButton from "../../components/BackButton/BackButton";
 
 import { recipeById } from "../../recoil/recipes";
 import placeholder from "../../constants/placeholder.constants";
 
 import styles from "./recipeDetail.styles";
 import { AppStyles } from "../../theme";
-import BackButton from "../../components/BackButton/BackButton";
 
 export default function RecipeDetail({
   navigation,

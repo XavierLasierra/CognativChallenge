@@ -1,9 +1,13 @@
-import React from "react";
-import { render } from "@testing-library/react-native";
+import React, { ReactElement } from "react";
+import { render, RenderOptions } from "@testing-library/react-native";
 import { RecoilRoot } from "recoil";
 
-const customRender = (ui: any, options?: any) => {
-  const AllTheProviders = ({ children }: any) => (
+interface IAllProvidersProps {
+  children: ReactElement;
+}
+
+const customRender = (ui: ReactElement, options?: RenderOptions) => {
+  const AllTheProviders = ({ children }: IAllProvidersProps) => (
     <RecoilRoot>{children}</RecoilRoot>
   );
 
