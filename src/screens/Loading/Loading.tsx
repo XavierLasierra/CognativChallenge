@@ -10,7 +10,9 @@ export default function Loading() {
       <View style={styles.indicatorContainer}>
         <ActivityIndicator
           size="large"
-          color={Colors.black}></ActivityIndicator>
+          color={Colors.black}
+          testID="activity-indicator"
+        />
       </View>
     </SafeAreaView>
   );
