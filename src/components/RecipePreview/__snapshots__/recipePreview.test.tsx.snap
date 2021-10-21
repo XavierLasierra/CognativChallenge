@@ -2,6 +2,7 @@
 
 exports[`Given a RecipePreview component When it is rendered Then should match the snapshot 1`] = `
 <View
+  accessibilityLabel="Go to Escovitch Fish recipe"
   accessibilityRole="button"
   accessible={true}
   focusable={true}

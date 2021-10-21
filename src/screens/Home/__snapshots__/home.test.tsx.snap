@@ -366,6 +366,7 @@ pepper",
             >
               <View>
                 <View
+                  accessibilityLabel="Go to Escovitch Fish recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -411,6 +412,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Oxtail with broad beans recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -456,6 +458,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Roast fennel and aubergine paella recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -501,6 +504,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Red Peas Soup recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -546,6 +550,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Brown Stew Chicken recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -591,6 +596,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Callaloo Jamaican Style recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -636,6 +642,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Jamaican Beef Patties recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -681,6 +688,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Jerk chicken with rice & peas recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -726,6 +734,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Saltfish and Ackee recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -771,6 +780,7 @@ pepper",
                   </View>
                 </View>
                 <View
+                  accessibilityLabel="Go to Steak Diane recommended recipe"
                   accessibilityRole="button"
                   accessible={true}
                   focusable={true}
@@ -824,6 +834,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Escovitch Fish recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -1009,6 +1020,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Oxtail with broad beans recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -1194,6 +1206,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Roast fennel and aubergine paella recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -1379,6 +1392,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Red Peas Soup recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -1564,6 +1578,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Brown Stew Chicken recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -1749,6 +1764,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Callaloo Jamaican Style recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -1934,6 +1950,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Jamaican Beef Patties recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -2119,6 +2136,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Jerk chicken with rice & peas recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -2304,6 +2322,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Saltfish and Ackee recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}
@@ -2489,6 +2508,7 @@ pepper",
           style={null}
         >
           <View
+            accessibilityLabel="Go to Steak Diane recipe"
             accessibilityRole="button"
             accessible={true}
             focusable={true}

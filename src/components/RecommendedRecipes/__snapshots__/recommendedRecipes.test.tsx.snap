@@ -35,6 +35,7 @@ exports[`Given a RecommendedRecipes component When it is rendered Then should ma
   >
     <View>
       <View
+        accessibilityLabel="Go to Escovitch Fish recommended recipe"
         accessibilityRole="button"
         accessible={true}
         focusable={true}
@@ -80,6 +81,7 @@ exports[`Given a RecommendedRecipes component When it is rendered Then should ma
         </View>
       </View>
       <View
+        accessibilityLabel="Go to Oxtail with broad beans recommended recipe"
         accessibilityRole="button"
         accessible={true}
         focusable={true}
