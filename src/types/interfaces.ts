@@ -51,12 +51,16 @@ export interface IBackButtonProps {
   actionOnPress: () => void;
 }
 
-interface IRecipeData {
+interface IRecipesData {
   data: IRecipe[];
 }
 
+export interface IAxiosRecipesData {
+  data: IRecipesData;
+}
+
 export interface IAxiosRecipeData {
-  data: IRecipeData;
+  data: IRecipe;
 }
 
 export interface IRecommendedRecipesProps {
