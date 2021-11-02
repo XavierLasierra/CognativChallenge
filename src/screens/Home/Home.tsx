@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, View, FlatList, SafeAreaView, StatusBar } from "react-native";
-import { useRecoilValue } from "recoil";
-import { IHomeProps, IRecipeProp } from "../../types/interfaces";
+import { IHomeProps, IRecipe, IRecipeProp } from "../../types/interfaces";
+import { observer } from "mobx-react-lite";
 
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
 import RecommendedRecipes from "../../components/RecommendedRecipes/RecommendedRecipes";
 
-import RecipesState from "../../recoil/recipes";
-import RecommendedRecipesState from "../../recoil/recommendedRecipes";
-
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
-export default function Home({ navigation }: IHomeProps) {
-  const recipes = useRecoilValue(RecipesState);
-  const recommendations = useRecoilValue(RecommendedRecipesState);
+import Store from "../../mobx";
+
+const Home = observer(({ navigation }: IHomeProps) => {
+  useEffect(() => {
+    Store.recipes.fetchRecipes();
+  }, []);
+  const recipes: IRecipe[] = Store.recipes.recipes;
+  const recommendations: IRecipe[] = [];
 
   const handlePress = (recipeId: string): void => {
     navigation.push("RecipeDetail", { recipeId });
@@ -54,4 +56,6 @@ export default function Home({ navigation }: IHomeProps) {
       <View style={AppStyles.container}>{renderList}</View>
     </SafeAreaView>
   );
-}
+});
+
+export default Home;
