@@ -1,7 +1,5 @@
 import RecipesStore from "./recipesStore";
 
-const recipes = new RecipesStore();
+const recipesStore = new RecipesStore();
 
-export default {
-  recipes,
-};
+export { recipesStore };

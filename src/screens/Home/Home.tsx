@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Text, View, FlatList, SafeAreaView, StatusBar } from "react-native";
-import { IHomeProps, IRecipe, IRecipeProp } from "../../types/interfaces";
+import { IHomeProps, IRecipeProp } from "../../types/interfaces";
 import { observer } from "mobx-react-lite";
 
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
@@ -9,14 +9,14 @@ import RecommendedRecipes from "../../components/RecommendedRecipes/RecommendedR
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
-import Store from "../../mobx";
+import { recipesStore } from "../../mobx";
 
 const Home = observer(({ navigation }: IHomeProps) => {
   useEffect(() => {
-    Store.recipes.fetchRecipes();
+    recipesStore.fetchRecipes();
+    recipesStore.fetchRecommendedRecipes();
   }, []);
-  const recipes: IRecipe[] = Store.recipes.recipes;
-  const recommendations: IRecipe[] = [];
+  const { recipes, recommendations }: any = recipesStore;
 
   const handlePress = (recipeId: string): void => {
     navigation.push("RecipeDetail", { recipeId });
