@@ -1,47 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, View, FlatList, SafeAreaView, StatusBar } from "react-native";
-import { useRecoilValue } from "recoil";
 import { IHomeProps, IRecipeProp } from "../../types/interfaces";
+import { observer } from "mobx-react-lite";
 
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
 import RecommendedRecipes from "../../components/RecommendedRecipes/RecommendedRecipes";
 
-import RecipesState from "../../recoil/recipes";
-import RecommendedRecipesState from "../../recoil/recommendedRecipes";
-
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
-export default function Home({ navigation }: IHomeProps) {
-  const recipes = useRecoilValue(RecipesState);
-  const recommendations = useRecoilValue(RecommendedRecipesState);
+import { recipesStore } from "../../mobx";
+
+const Home = observer(({ navigation }: IHomeProps) => {
+  const { recipes, recommendations }: any = recipesStore;
+
+  useEffect(() => {
+    recipesStore.fetchRecipes();
+    recipesStore.fetchRecommendedRecipes();
+  }, []);
 
   const handlePress = (recipeId: string): void => {
     navigation.push("RecipeDetail", { recipeId });
   };
 
-  const renderRecommended = () => {
-    return (
-      <RecommendedRecipes
-        recommendations={recommendations}
-        actionOnPress={handlePress}
-      />
-    );
-  };
-
   const renderRow = ({ item }: IRecipeProp) => {
     return <RecipePreview recipe={item} actionOnPress={handlePress} />;
   };
-
-  const renderList = (
-    <FlatList
-      ListHeaderComponent={renderRecommended}
-      showsVerticalScrollIndicator={false}
-      keyExtractor={({ _id }) => _id}
-      data={recipes}
-      renderItem={renderRow}
-    />
-  );
 
   return (
     <SafeAreaView style={AppStyles.screen.mainScreen}>
@@ -51,7 +35,22 @@ export default function Home({ navigation }: IHomeProps) {
           <Text style={styles.title}>Recipes</Text>
         </View>
       </View>
-      <View style={AppStyles.container}>{renderList}</View>
+      <View style={AppStyles.container}>
+        <FlatList
+          ListHeaderComponent={
+            <RecommendedRecipes
+              recommendations={recommendations}
+              actionOnPress={handlePress}
+            />
+          }
+          showsVerticalScrollIndicator={false}
+          keyExtractor={({ _id }) => _id}
+          data={recipes}
+          renderItem={renderRow}
+        />
+      </View>
     </SafeAreaView>
   );
-}
+});
+
+export default Home;
