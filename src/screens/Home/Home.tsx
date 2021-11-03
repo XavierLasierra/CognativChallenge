@@ -9,14 +9,15 @@ import RecommendedRecipes from "../../components/RecommendedRecipes/RecommendedR
 import styles from "./home.styles";
 import AppStyles from "../../theme/AppStyles";
 
-import { recipesStore } from "../../mobx";
+import useStore from "../../hooks/useStore";
 
 const Home = observer(({ navigation }: IHomeProps) => {
-  const { recipes, recommendations }: any = recipesStore;
+  const { recipes, recommendations, fetchRecipes, fetchRecommendedRecipes } =
+    useStore();
 
   useEffect(() => {
-    recipesStore.fetchRecipes();
-    recipesStore.fetchRecommendedRecipes();
+    fetchRecipes();
+    fetchRecommendedRecipes();
   }, []);
 
   const handlePress = (recipeId: string): void => {

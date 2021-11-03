@@ -1,4 +1,4 @@
-import { action, computed, flow, makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import {
   getRecipe,
   getRecipes,
@@ -15,33 +15,36 @@ class RecipesStore {
     makeAutoObservable(this);
   }
 
-  fetchRecipes = flow(function* (this: any) {
+  fetchRecipes = async () => {
     try {
-      this.recipes = yield getRecipes();
+      const recipes = await getRecipes();
+      runInAction(() => (this.recipes = recipes));
     } catch (error) {
-      this.recipes = [];
+      runInAction(() => (this.recipes = []));
     }
-  });
+  };
 
-  fetchRecommendedRecipes = flow(function* (this: any) {
+  fetchRecommendedRecipes = async () => {
     try {
-      this.recommendations = yield getRecommendedRecipes();
+      const recommendations = await getRecommendedRecipes();
+      runInAction(() => (this.recommendations = recommendations));
     } catch (error) {
       this.recommendations = [];
     }
-  });
+  };
 
-  fetchRecipe = flow(function* (this: any, recipeId: string) {
+  fetchRecipe = async (recipeId: string) => {
     try {
-      this.currentRecipe = yield getRecipe(recipeId);
+      const currentRecipe = await getRecipe(recipeId);
+      runInAction(() => (this.currentRecipe = currentRecipe));
     } catch (error) {
       this.currentRecipe = null;
     }
-  });
+  };
 
-  clearRecipe = action(() => {
+  clearRecipe = () => {
     this.currentRecipe = null;
-  });
+  };
 }
 
 export default RecipesStore;
