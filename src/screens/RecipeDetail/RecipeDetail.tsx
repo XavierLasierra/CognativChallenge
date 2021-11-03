@@ -16,8 +16,8 @@ import placeholder from "../../constants/placeholder.constants";
 
 import styles from "./recipeDetail.styles";
 import { AppStyles } from "../../theme";
-import { recipesStore } from "../../mobx";
 import { observer } from "mobx-react-lite";
+import useStore from "../../hooks/useStore";
 
 const RecipeDetail = observer(
   ({
@@ -26,12 +26,12 @@ const RecipeDetail = observer(
       params: { recipeId },
     },
   }: IRecipeDetailsProps) => {
-    const { currentRecipe: recipe }: any = recipesStore;
+    const { currentRecipe: recipe, fetchRecipe, clearRecipe } = useStore();
 
     useEffect(() => {
-      recipesStore.fetchRecipe(recipeId);
+      fetchRecipe(recipeId);
       return () => {
-        recipesStore.clearRecipe();
+        clearRecipe();
       };
     }, []);
 
