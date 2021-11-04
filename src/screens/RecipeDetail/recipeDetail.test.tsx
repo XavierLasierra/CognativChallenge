@@ -1,18 +1,17 @@
 import React from "react";
-import { RecoilRoot } from "recoil";
-import { render } from "@testing-library/react-native";
+import { render, waitFor } from "@testing-library/react-native";
 
 import RecipeDetail from "./RecipeDetail";
 
-import { getRecipes } from "../../services/recipes.services";
+import { getRecipe } from "../../services/recipes.services";
 import recipesMock from "../../__mocks__/recipes.mock";
 
 jest.mock("../../services/recipes.services");
 
 describe("Given a RecipeDetails component", () => {
   describe("When it is rendered", () => {
-    test("Then should match the snapshot", () => {
-      (getRecipes as jest.Mock).mockReturnValue(recipesMock);
+    test("Then should render a recipe with a name Escovitch Fish", async () => {
+      (getRecipe as jest.Mock).mockReturnValue(recipesMock[0]);
       const navigation = {
         pop: jest.fn(),
         push: jest.fn(),
@@ -24,12 +23,12 @@ describe("Given a RecipeDetails component", () => {
       };
 
       const screen = render(
-        <RecoilRoot>
-          <RecipeDetail navigation={navigation} route={route} />
-        </RecoilRoot>,
+        <RecipeDetail navigation={navigation} route={route} />,
       );
 
-      expect(screen).toMatchSnapshot();
+      const titleNode = await waitFor(() => screen.getByText("Escovitch Fish"));
+
+      expect(titleNode).not.toBe(null);
     });
   });
 });
