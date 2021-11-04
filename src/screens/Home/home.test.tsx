@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react-native";
+import { render, waitFor } from "@testing-library/react-native";
 
 import Home from "./Home";
 
@@ -25,7 +25,10 @@ describe("Given a Home component", () => {
 
       const screen = render(<Home navigation={navigation} />);
 
-      expect(screen).toMatchSnapshot();
+      const recipeTitle = waitFor(() =>
+        screen.queryByText("Oxtail with broad beans"),
+      );
+      expect(recipeTitle).not.toBe(null);
     });
   });
 });

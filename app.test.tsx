@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react-native";
+import { render, waitFor } from "@testing-library/react-native";
 
 import App from "./App";
 
@@ -22,7 +22,7 @@ describe("Given an App component", () => {
         );
         const screen = render(<App />);
 
-        const recipeTitle = screen.getByText("Recipes");
+        const recipeTitle = waitFor(() => screen.getByText("Recipes"));
 
         expect(recipeTitle).not.toBe(null);
       });
