@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import RecipesStore from "../mobx/recipesStore";
+import RecipesStore from "../mobx/RecipesStore/RecipesStore";
 import store from "../mobx";
 
 interface IContext {

@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { getRecipes } from "./recipes.services";
 import recipesMock from "../__mocks__/recipes.mock";
+import { waitFor } from "@testing-library/react-native";
 
 jest.mock("axios");
 
@@ -23,12 +24,14 @@ describe("Given a getRecipes function", () => {
     });
 
     describe("And axios.get rejectes", () => {
-      test("Then should return an empty array", async () => {
+      test("Then should return an empty array", () => {
         (axios.get as jest.Mock).mockRejectedValue(new Error());
 
-        const result = await getRecipes();
-
-        expect(result).toEqual([]);
+        waitFor(() =>
+          expect(async () => {
+            await getRecipes();
+          }).toThrow(),
+        );
       });
     });
   });

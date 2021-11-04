@@ -3,8 +3,8 @@ import {
   getRecipe,
   getRecipes,
   getRecommendedRecipes,
-} from "../services/recipes.services";
-import { IRecipe } from "../types/interfaces";
+} from "../../services/recipes.services";
+import { IRecipe } from "../../types/interfaces";
 
 class RecipesStore {
   recipes: IRecipe[] = [];
@@ -38,7 +38,7 @@ class RecipesStore {
       const currentRecipe = await getRecipe(recipeId);
       runInAction(() => (this.currentRecipe = currentRecipe));
     } catch (error) {
-      this.currentRecipe = null;
+      runInAction(() => (this.currentRecipe = null));
     }
   };
 

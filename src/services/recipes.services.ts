@@ -15,7 +15,7 @@ export async function getRecipes(): Promise<IRecipe[]> {
     const { data: recipes } = data;
     return recipes || [];
   } catch (error) {
-    return [];
+    throw error;
   }
 }
 
@@ -28,7 +28,7 @@ export async function getRecommendedRecipes(): Promise<IRecipe[]> {
     const { data: recommendedRecipes } = data;
     return recommendedRecipes || [];
   } catch (error) {
-    return [];
+    throw error;
   }
 }
 
@@ -39,6 +39,6 @@ export async function getRecipe(recipeId: string): Promise<IRecipe | null> {
     );
     return recipe || null;
   } catch (error) {
-    return null;
+    throw error;
   }
 }

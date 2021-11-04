@@ -1,3 +1,3 @@
-import RecipesStore from "./recipesStore";
+import RecipesStore from "./RecipesStore/RecipesStore";
 
 export default { recipesStore: new RecipesStore() };
