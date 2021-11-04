@@ -1,5 +1,4 @@
 import React from "react";
-import { RecoilRoot } from "recoil";
 import { render } from "@testing-library/react-native";
 
 import Home from "./Home";
@@ -24,11 +23,7 @@ describe("Given a Home component", () => {
         push: jest.fn(),
       };
 
-      const screen = render(
-        <RecoilRoot>
-          <Home navigation={navigation} />
-        </RecoilRoot>,
-      );
+      const screen = render(<Home navigation={navigation} />);
 
       expect(screen).toMatchSnapshot();
     });
