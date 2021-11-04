@@ -1,12 +1,17 @@
 import React, { ReactChild } from "react";
+import RecipesStore from "../mobx/RecipesStore/RecipesStore";
 import StoreContext from "./StoreContext";
-import store from "../mobx";
+
+interface IStore {
+  recipesStore: RecipesStore;
+}
 
 interface IStoreContextProvider {
+  store: IStore;
   children: ReactChild;
 }
 
-const StoreContextProvider = ({ children }: IStoreContextProvider) => {
+const StoreContextProvider = ({ store, children }: IStoreContextProvider) => {
   return (
     <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
   );
