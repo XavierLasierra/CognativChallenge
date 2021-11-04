@@ -26,12 +26,13 @@ const RecipeDetail = observer(
       params: { recipeId },
     },
   }: IRecipeDetailsProps) => {
-    const { currentRecipe: recipe, fetchRecipe, clearRecipe } = useStore();
+    const { recipesStore } = useStore();
+    const { currentRecipe: recipe } = recipesStore;
 
     useEffect(() => {
-      fetchRecipe(recipeId);
+      recipesStore.fetchRecipe(recipeId);
       return () => {
-        clearRecipe();
+        recipesStore.clearRecipe();
       };
     }, []);
 

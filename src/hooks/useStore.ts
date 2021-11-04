@@ -1,27 +1,8 @@
-import Store from "../mobx";
+import { useContext } from "react";
+import StoreContext from "../contexts/StoreContext";
 
 const useStore = () => {
-  const {
-    recipesStore: {
-      recipes,
-      recommendations,
-      currentRecipe,
-      fetchRecipes,
-      fetchRecommendedRecipes,
-      fetchRecipe,
-      clearRecipe,
-    },
-  } = Store;
-
-  return {
-    recipes,
-    recommendations,
-    currentRecipe,
-    fetchRecipes,
-    fetchRecommendedRecipes,
-    fetchRecipe,
-    clearRecipe,
-  };
+  return useContext(StoreContext);
 };
 
 export default useStore;

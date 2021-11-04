@@ -12,12 +12,13 @@ import AppStyles from "../../theme/AppStyles";
 import useStore from "../../hooks/useStore";
 
 const Home = observer(({ navigation }: IHomeProps) => {
-  const { recipes, recommendations, fetchRecipes, fetchRecommendedRecipes } =
-    useStore();
+  const { recipesStore } = useStore();
+
+  const { recipes, recommendations } = recipesStore;
 
   useEffect(() => {
-    fetchRecipes();
-    fetchRecommendedRecipes();
+    recipesStore.fetchRecipes();
+    recipesStore.fetchRecommendedRecipes();
   }, []);
 
   const handlePress = (recipeId: string): void => {
