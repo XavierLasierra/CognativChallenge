@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable } from "mobx";
 import {
   getRecipe,
   getRecipes,
@@ -15,35 +15,43 @@ class RecipesStore {
     makeAutoObservable(this);
   }
 
+  setRecipes = (recipes: IRecipe[]) => {
+    this.recipes = recipes;
+  };
+
+  setRecommendations = (recommendations: IRecipe[]) => {
+    this.recommendations = recommendations;
+  };
+
+  setCurrentRecipe = (currentRecipe: IRecipe | null) => {
+    this.currentRecipe = currentRecipe;
+  };
+
   fetchRecipes = async () => {
     try {
       const recipes = await getRecipes();
-      runInAction(() => (this.recipes = recipes));
+      this.setRecipes(recipes);
     } catch (error) {
-      runInAction(() => (this.recipes = []));
+      this.setRecipes([]);
     }
   };
 
   fetchRecommendedRecipes = async () => {
     try {
       const recommendations = await getRecommendedRecipes();
-      runInAction(() => (this.recommendations = recommendations));
+      this.setRecommendations(recommendations);
     } catch (error) {
-      this.recommendations = [];
+      this.setRecommendations([]);
     }
   };
 
   fetchRecipe = async (recipeId: string) => {
     try {
       const currentRecipe = await getRecipe(recipeId);
-      runInAction(() => (this.currentRecipe = currentRecipe));
+      this.setCurrentRecipe(currentRecipe);
     } catch (error) {
-      runInAction(() => (this.currentRecipe = null));
+      this.setCurrentRecipe(null);
     }
-  };
-
-  clearRecipe = () => {
-    this.currentRecipe = null;
   };
 }
 

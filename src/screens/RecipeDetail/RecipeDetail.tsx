@@ -32,7 +32,7 @@ const RecipeDetail = observer(
     useEffect(() => {
       recipesStore.fetchRecipe(recipeId);
       return () => {
-        recipesStore.clearRecipe();
+        recipesStore.setCurrentRecipe(null);
       };
     }, []);
 
